@@ -21,11 +21,11 @@ import {
 const PROJECTS = [
   {
     id: 0,
-    title: "Spidy Universe",
+    title: "SPIDER GUY",
     category: "Personalized AI",
-    description: "My biggest build yet. A personalized AI ecosystem designed for seamless interaction and intelligent automation. Coming Soon.",
+    description: "My biggest build yet. A personalized AI ecosystem designed for seamless interaction and intelligent automation. Personalization in Maintenance.",
     tags: ["AI", "LLM", "Python", "React"],
-    link: "#",
+    link: "https://spider-guy-ai.vercel.app/",
     color: "bg-purple-50",
     isBiggest: true
   },
@@ -131,7 +131,7 @@ export default function App() {
               </div>
               <div>
                 <p className="font-medium leading-tight">
-                  Hold on, I'm working to build my own personalized AI called <span className="text-purple-400 font-bold underline decoration-2 underline-offset-4">Spidy Universe</span>.
+                  Hold on, I'm working to build my own personalized AI called <span className="text-purple-400 font-bold underline decoration-2 underline-offset-4">SPIDER GUY</span>.
                 </p>
                 <p className="text-xs text-zinc-500 mt-2">This will be my biggest build yet!</p>
               </div>
@@ -265,11 +265,13 @@ export default function App() {
                     </div>
                     <h4 className="text-xl font-bold group-hover:text-zinc-600 transition-colors">{project.title}</h4>
                     <p className="text-zinc-500 text-sm line-clamp-2">
-                      {project.description.split('Coming Soon').map((part, i, arr) => (
+                      {project.description.split(/Coming Soon|Maintenance/).map((part, i, arr) => (
                         <React.Fragment key={i}>
                           {part}
                           {i < arr.length - 1 && (
-                            <span className="text-purple-500 font-bold underline decoration-2 underline-offset-2">Coming Soon</span>
+                            <span className="text-purple-500 font-bold underline decoration-2 underline-offset-2">
+                              {project.description.includes('Coming Soon') ? 'Coming Soon' : 'Maintenance'}
+                            </span>
                           )}
                         </React.Fragment>
                       ))}
@@ -379,3 +381,4 @@ export default function App() {
     </div>
   );
 }
+
